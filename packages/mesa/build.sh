@@ -84,7 +84,7 @@ termux_step_pre_configure() {
 
 	local _vk_drivers="swrast"
 	if [ $TERMUX_ARCH = "arm" ] || [ $TERMUX_ARCH = "aarch64" ]; then
-		_vk_drivers+=",freedreno"
+		_vk_drivers+=",freedreno,panfrost"
 		TERMUX_PKG_EXTRA_CONFIGURE_ARGS+=" -Dfreedreno-kmds=msm,kgsl"
 	fi
 	TERMUX_PKG_EXTRA_CONFIGURE_ARGS+=" -Dvulkan-drivers=$_vk_drivers"
